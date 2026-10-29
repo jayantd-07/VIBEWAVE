@@ -3,14 +3,12 @@ import { Track, MoodType, VisualizerMode, EqualizerState, Playlist } from './typ
 import { BUILTIN_TRACKS } from './audio/synthTracks';
 import { audioEngine, EQ_PRESETS } from './audio/audioEngine';
 import { parseLrc } from './utils/lrcParser';
-import { estimateMood } from './utils/moodClassifier';
 import { Sidebar } from './components/Sidebar';
 import { MainContent } from './components/MainContent';
 import { PlayerBar } from './components/PlayerBar';
 import { LyricsPanel } from './components/LyricsPanel';
 import { EqualizerModal } from './components/EqualizerModal';
 import { TrackUploadModal } from './components/TrackUploadModal';
-import { DevGuideModal } from './components/DevGuideModal';
 import { SettingsModal } from './components/SettingsModal';
 
 export default function App() {
@@ -45,7 +43,6 @@ export default function App() {
   const [currentTab, setCurrentTab] = useState<'home' | 'library' | 'playlists' | 'moods'>('home');
   const [isUploadOpen, setIsUploadOpen] = useState<boolean>(false);
   const [isEqualizerOpen, setIsEqualizerOpen] = useState<boolean>(false);
-  const [isGuideOpen, setIsGuideOpen] = useState<boolean>(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState<boolean>(false);
 
   // User Library & Playlists
@@ -189,7 +186,6 @@ export default function App() {
   // Keyboard Shortcuts Handler
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Don't trigger if user is typing in input or textarea
       if (['INPUT', 'TEXTAREA', 'SELECT'].includes((e.target as HTMLElement).tagName)) {
         return;
       }
@@ -301,7 +297,6 @@ export default function App() {
           onSelectTab={setCurrentTab}
           onOpenUpload={() => setIsUploadOpen(true)}
           onOpenEqualizer={() => setIsEqualizerOpen(true)}
-          onOpenGuide={() => setIsGuideOpen(true)}
           onOpenSettings={() => setIsSettingsOpen(true)}
           currentMood={currentMood}
         />
@@ -395,8 +390,6 @@ export default function App() {
         onAddTrack={handleAddTrack}
         currentMood={currentMood}
       />
-
-      <DevGuideModal isOpen={isGuideOpen} onClose={() => setIsGuideOpen(false)} />
 
       <SettingsModal
         isOpen={isSettingsOpen}

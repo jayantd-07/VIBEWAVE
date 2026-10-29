@@ -5,7 +5,6 @@ import {
   FolderHeart,
   Sliders,
   Sparkles,
-  BookOpen,
   Settings as SettingsIcon,
   PlusCircle,
   WifiOff,
@@ -19,7 +18,6 @@ interface SidebarProps {
   onSelectTab: (tab: 'home' | 'library' | 'playlists' | 'moods') => void;
   onOpenUpload: () => void;
   onOpenEqualizer: () => void;
-  onOpenGuide: () => void;
   onOpenSettings: () => void;
   currentMood: MoodType;
 }
@@ -29,7 +27,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onSelectTab,
   onOpenUpload,
   onOpenEqualizer,
-  onOpenGuide,
   onOpenSettings,
   currentMood,
 }) => {
@@ -133,14 +130,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
             >
               <Sliders className="w-4 h-4 text-emerald-400" />
               <span>10-Band EQ & 3D Spatial</span>
-            </button>
-
-            <button
-              onClick={onOpenGuide}
-              className="w-full flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-medium text-cyan-300 bg-cyan-950/30 border border-cyan-800/40 hover:bg-cyan-900/40 transition-all cursor-pointer"
-            >
-              <BookOpen className="w-4 h-4 text-cyan-400" />
-              <span>VS Code & APK Setup</span>
             </button>
           </div>
         </div>
