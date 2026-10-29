@@ -1,0 +1,24 @@
+{
+  "name": "VIBEWAVE — AI-Powered Music Player",
+  "short_name": "Vibewave",
+  "description": "Futuristic adaptive music player with real-time audio visualization, AI mood intelligence, synced lyrics, and offline playback.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07080d",
+  "theme_color": "#090a10",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

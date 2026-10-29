@@ -1,0 +1,6 @@
+{
+  "name": "VIBEWAVE — AI-Powered Music Player",
+  "description": "Futuristic, adaptive music player with real-time audio visualization, AI mood intelligence, synced lyrics, and offline playback.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

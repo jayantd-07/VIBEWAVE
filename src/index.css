@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+/* Custom dark glow and smooth transitions */
+::selection {
+  background-color: #06b6d4;
+  color: #07080d;
+}
+
+input[type="range"] {
+  accent-color: #06b6d4;
+}
